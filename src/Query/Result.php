@@ -12,7 +12,7 @@ class Result extends Object
 	/**
 	 * @var int
 	 */
-	private $rowCount = 0;
+	private $rowCount;
 
 	/**
 	 * @var array
