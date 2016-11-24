@@ -3,8 +3,8 @@
 
 namespace Damejidlo\Reporting;
 
-use Kdyby\Doctrine\Entities\Attributes\Identifier;
 use Doctrine\ORM\Mapping as ORM;
+use Kdyby\Doctrine\Entities\Attributes\Identifier;
 use Nette\Object;
 
 
