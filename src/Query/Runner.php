@@ -3,9 +3,8 @@
 namespace Damejidlo\Reporting\Query;
 
 use Damejidlo\Reporting\Query\Parameter\InvalidValueException;
-use Doctrine\DBAL\DBALException as DoctrineDBALException;
-use Kdyby\Doctrine\Connection;
-use Kdyby\Doctrine\DBALException as KdybyDBALException;
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Connection;
 use Nette\Object;
 
 
@@ -56,9 +55,8 @@ class Runner extends Object
 
 		try {
 			$statement = $this->connection->executeQuery($query->getSql(), $query->getParameterValues(), $query->getParameterTypes());
-		} catch (DoctrineDBALException $exception) {
-			throw new SyntaxErrorException('Query could not run: ' . $exception->getMessage());
-		} catch (KdybyDBALException $exception) {
+
+		} catch (DBALException $exception) {
 			throw new SyntaxErrorException('Query could not run: ' . $exception->getMessage());
 		}
 

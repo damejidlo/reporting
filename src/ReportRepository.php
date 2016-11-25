@@ -4,8 +4,7 @@ namespace Damejidlo\Reporting;
 
 use Damejidlo\Reporting\Query\Parser;
 use Damejidlo\Reporting\Query\SyntaxErrorException;
-use Kdyby\Doctrine\EntityManager;
-use Kdyby\Doctrine\EntityRepository;
+use Doctrine\ORM\EntityRepository;
 use Nette\Object;
 
 
@@ -26,12 +25,12 @@ class ReportRepository extends Object
 
 
 	/**
-	 * @param EntityManager $em
+	 * @param EntityRepository $repository
 	 * @param Parser $queryParser
 	 */
-	public function __construct(EntityManager $em, Parser $queryParser)
+	public function __construct(EntityRepository $repository, Parser $queryParser)
 	{
-		$this->repository = $em->getRepository(ReportDefinition::class);
+		$this->repository = $repository;
 		$this->queryParser = $queryParser;
 	}
 
@@ -76,11 +75,11 @@ class ReportRepository extends Object
 
 
 	/**
-	 * @param ReportDefinition $definition
+	 * @param IReportDefinition $definition
 	 * @return Report
 	 * @throws InvalidReportException
 	 */
-	private function createReport(ReportDefinition $definition)
+	private function createReport(IReportDefinition $definition)
 	{
 		try {
 			$query = $this->queryParser->parse($definition->getQuery());

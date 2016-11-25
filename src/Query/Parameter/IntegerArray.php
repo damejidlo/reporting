@@ -2,7 +2,7 @@
 
 namespace Damejidlo\Reporting\Query\Parameter;
 
-use Kdyby\Doctrine\Connection;
+use Doctrine\DBAL\Connection;
 
 
 

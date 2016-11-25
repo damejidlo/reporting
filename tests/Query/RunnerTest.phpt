@@ -11,8 +11,8 @@ use Damejidlo\Reporting\Query\ParameterNotSetException;
 use Damejidlo\Reporting\Query\Query;
 use Damejidlo\Reporting\Query\Runner;
 use Damejidlo\Reporting\Query\SyntaxErrorException;
-use Doctrine\DBAL\DBALException as DoctrineDBALException;
-use Kdyby\Doctrine\Connection;
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Connection;
 use Mockery;
 use Mockery\MockInterface;
 use Tester\Assert;
@@ -69,7 +69,7 @@ class RunnerTest extends TestCase
 	public function getConnectionMockThrowingException()
 	{
 		return $this->getConnectionMock()
-			->shouldReceive('executeQuery')->andThrow(DoctrineDBALException::class)->getMock();
+			->shouldReceive('executeQuery')->andThrow(DBALException::class)->getMock();
 	}
 
 

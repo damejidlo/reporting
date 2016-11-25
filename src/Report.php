@@ -12,7 +12,7 @@ class Report extends Object
 {
 
 	/**
-	 * @var ReportDefinition
+	 * @var IReportDefinition
 	 */
 	private $definition;
 
@@ -24,10 +24,10 @@ class Report extends Object
 
 
 	/**
-	 * @param ReportDefinition $definition
+	 * @param IReportDefinition $definition
 	 * @param Query $query
 	 */
-	public function __construct(ReportDefinition $definition, Query $query)
+	public function __construct(IReportDefinition $definition, Query $query)
 	{
 		$this->definition = $definition;
 		$this->query = $query;
@@ -86,7 +86,7 @@ class Report extends Object
 
 
 	/**
-	 * @return ReportDefinition
+	 * @return IReportDefinition
 	 */
 	public function getDefinition()
 	{
