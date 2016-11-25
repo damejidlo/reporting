@@ -3,8 +3,8 @@
 namespace Damejidlo\Reporting\Query;
 
 use Damejidlo\Reporting\Query\Parameter\InvalidValueException;
-use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\DBALException;
 use Nette\Object;
 
 
