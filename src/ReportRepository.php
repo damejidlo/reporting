@@ -4,7 +4,6 @@ namespace Damejidlo\Reporting;
 
 use Damejidlo\Reporting\Query\Parser;
 use Damejidlo\Reporting\Query\SyntaxErrorException;
-use Doctrine\ORM\EntityRepository;
 use Nette\Object;
 
 
@@ -13,9 +12,9 @@ class ReportRepository extends Object
 {
 
 	/**
-	 * @var EntityRepository
+	 * @var IReportDefinitionFinder
 	 */
-	private $repository;
+	private $reportDefinitionFinder;
 
 	/**
 	 * @var Parser
@@ -25,12 +24,12 @@ class ReportRepository extends Object
 
 
 	/**
-	 * @param EntityRepository $repository
+	 * @param IReportDefinitionFinder $reportDefinitionFinder
 	 * @param Parser $queryParser
 	 */
-	public function __construct(EntityRepository $repository, Parser $queryParser)
+	public function __construct(IReportDefinitionFinder $reportDefinitionFinder, Parser $queryParser)
 	{
-		$this->repository = $repository;
+		$this->reportDefinitionFinder = $reportDefinitionFinder;
 		$this->queryParser = $queryParser;
 	}
 
@@ -42,12 +41,12 @@ class ReportRepository extends Object
 	public function getList()
 	{
 		$sortBy = ['name' => 'ASC'];
-		$definitions = $this->repository->findBy([], $sortBy);
+		$definitions = $this->reportDefinitionFinder->findBy([], $sortBy);
 
 		$list = [];
 
 		foreach ($definitions as $definition) {
-			$list[$definition->id] = $definition->name;
+			$list[$definition->getId()] = $definition->getName();
 		}
 
 		return $list;
@@ -61,9 +60,9 @@ class ReportRepository extends Object
 	 * @throws InvalidReportException
 	 * @throws ReportNotFoundException
 	 */
-	public function find($id)
+	public function get($id)
 	{
-		$definition = $this->repository->find($id);
+		$definition = $this->reportDefinitionFinder->find($id);
 
 		if ($definition === NULL) {
 			throw new ReportNotFoundException("Report id $id not found.");
