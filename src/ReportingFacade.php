@@ -8,14 +8,12 @@ use Damejidlo\Reporting\Query\ParameterNotSetException;
 use Damejidlo\Reporting\Query\Result;
 use Damejidlo\Reporting\Query\Runner;
 use Damejidlo\Reporting\Query\SyntaxErrorException;
-use Nette\SmartObject;
+use Nette\Object;
 
 
 
-class ReportingFacade
+class ReportingFacade extends Object
 {
-
-	use SmartObject;
 
 	/**
 	 * @var ReportRepository
