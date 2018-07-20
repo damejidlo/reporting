@@ -9,7 +9,7 @@ install:
   - composer install --no-interaction --optimize-autoloader
 
 before_script:
-  - vendor/bin/phpcs --standard=vendor/damejidlo/coding-standard/CodeSniffer/DameJidloStandard/ruleset.xml --extensions=php --encoding=utf-8  src/
+  - vendor/bin/phpcs --standard=vendor/damejidlo/coding-standard/CodeSniffer/DameJidloCodingStandard/ruleset.xml --extensions=php --encoding=utf-8  src/
   - time ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
 
 script:
