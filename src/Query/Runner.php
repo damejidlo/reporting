@@ -5,6 +5,7 @@ namespace Damejidlo\Reporting\Query;
 use Damejidlo\Reporting\Query\Parameter\InvalidValueException;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Statement;
 use Nette\SmartObject;
 
 
@@ -56,6 +57,7 @@ class Runner
 		}
 
 		try {
+			/** @var Statement $statement */
 			$statement = $this->connection->executeQuery($query->getSql(), $query->getParameterValues(), $query->getParameterTypes());
 
 		} catch (DBALException $exception) {

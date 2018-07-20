@@ -57,7 +57,7 @@ class ReportRepository
 
 
 	/**
-	 * @param $id
+	 * @param int $id
 	 * @return Report
 	 * @throws InvalidReportException
 	 * @throws ReportNotFoundException

@@ -132,7 +132,7 @@ abstract class AbstractBase implements ParameterInterface
 
 
 	/**
-	 * @param $value
+	 * @param string $value
 	 * @return bool
 	 */
 	protected function regexValidateValue($value)

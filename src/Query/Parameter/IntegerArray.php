@@ -42,7 +42,7 @@ class IntegerArray extends AbstractBase
 
 
 	/**
-	 * @param $string
+	 * @param string $string
 	 * @return int[]
 	 */
 	private function parseIntegerArray($string)
