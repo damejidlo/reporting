@@ -1,0 +1,6 @@
+includes:
+	- vendor/phpstan/phpstan-nette/extension.neon
+
+parameters:
+	ignoreErrors:
+		- '#Access to undefined constant Damejidlo\\Reporting\\Query\\Parameter\\AbstractBase::#'
