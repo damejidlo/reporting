@@ -3,15 +3,17 @@
 namespace Damejidlo\Reporting\Query\Parameter;
 
 use Damejidlo\Reporting\Query\ParameterInterface;
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
 /**
  * @package Damejidlo\Reporting
  */
-abstract class AbstractBase extends Object implements ParameterInterface
+abstract class AbstractBase implements ParameterInterface
 {
+
+	use SmartObject;
 
 	const FORM_ELEMENT_NAME_PREFIX = 'parameter_';
 

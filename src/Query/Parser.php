@@ -2,13 +2,15 @@
 
 namespace Damejidlo\Reporting\Query;
 
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\Strings;
 
 
 
-class Parser extends Object
+class Parser
 {
+
+	use SmartObject;
 
 	/**
 	 * parameter syntax: :name[type]"optional description"

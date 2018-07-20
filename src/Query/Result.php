@@ -2,12 +2,14 @@
 
 namespace Damejidlo\Reporting\Query;
 
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class Result extends Object
+class Result
 {
+
+	use SmartObject;
 
 	/**
 	 * @var int

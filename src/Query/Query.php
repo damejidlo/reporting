@@ -2,12 +2,14 @@
 
 namespace Damejidlo\Reporting\Query;
 
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class Query extends Object
+class Query
 {
+
+	use SmartObject;
 
 	/**
 	 * @var string $sql

@@ -4,12 +4,14 @@ namespace Damejidlo\Reporting;
 
 use Damejidlo\Reporting\Query\ParameterInterface;
 use Damejidlo\Reporting\Query\Query;
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class Report extends Object
+class Report
 {
+
+	use SmartObject;
 
 	/**
 	 * @var IReportDefinition
