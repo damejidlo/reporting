@@ -15,7 +15,7 @@ class Parser
 	/**
 	 * parameter syntax: :name[type]"optional description"
 	 */
-	const PARAMETER_SYNTAX_REGEX = '#(:(?<name>\w+)\[(?<type>\w+)\]("(?<description>.+?)")?)#';
+	private const PARAMETER_SYNTAX_REGEX = '#(:(?<name>\w+)\[(?<type>\w+)\]("(?<description>.+?)")?)#';
 
 	/**
 	 * @var ParameterFactoryInterface
@@ -71,8 +71,8 @@ class Parser
 
 
 	/**
-	 * @param array $matches
-	 * @return array
+	 * @param mixed[] $matches
+	 * @return mixed[]
 	 */
 	private function resolveParameters(array $matches)
 	{

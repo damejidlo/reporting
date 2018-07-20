@@ -38,7 +38,7 @@ class ReportRepository
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getList()
 	{

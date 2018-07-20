@@ -33,7 +33,7 @@ class Runner
 
 	/**
 	 * @param Query $query $query
-	 * @param array $parameterValues
+	 * @param mixed[] $parameterValues
 	 * @return Result
 	 * @throws InvalidParameterValueException
 	 * @throws ParameterNotSetException

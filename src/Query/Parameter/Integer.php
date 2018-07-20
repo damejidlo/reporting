@@ -9,15 +9,15 @@ use PDO;
 class Integer extends AbstractBase
 {
 
-	const PDO_TYPE = PDO::PARAM_INT;
+	public const PDO_TYPE = PDO::PARAM_INT;
 
-	const REGEX_VALIDATION_PATTERN = '\d+';
+	public const REGEX_VALIDATION_PATTERN = '\d+';
 
-	const FORM_INPUT_TYPE_DESCRIPTION = 'číslo';
+	public const FORM_INPUT_TYPE_DESCRIPTION = 'číslo';
 
-	const FORM_INPUT_INVALID_MESSAGE = 'Hodnota parametru musí být číslo.';
+	public const FORM_INPUT_INVALID_MESSAGE = 'Hodnota parametru musí být číslo.';
 
-	const FORM_INPUT_PLACEHOLDER = 'Např.: 1000';
+	public const FORM_INPUT_PLACEHOLDER = 'Např.: 1000';
 
 	/**
 	 * @var int
@@ -36,7 +36,7 @@ class Integer extends AbstractBase
 			throw new InvalidValueException('Invalid parameter value.');
 		}
 
-		$this->value = (integer) $value;
+		$this->value = (int) $value;
 	}
 
 

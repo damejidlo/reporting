@@ -14,6 +14,7 @@ use Nette\SmartObject;
 
 class ReportingFacade
 {
+
 	use SmartObject;
 
 	/**
@@ -65,7 +66,7 @@ class ReportingFacade
 
 	/**
 	 * @param Report $report
-	 * @param array $parameterValues
+	 * @param mixed[] $parameterValues
 	 * @return Result
 	 * @throws InvalidParameterValueException
 	 * @throws ParameterNotSetException

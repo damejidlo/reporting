@@ -56,7 +56,7 @@ class Query
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getParameterValues()
 	{
@@ -72,7 +72,7 @@ class Query
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getParameterTypes()
 	{

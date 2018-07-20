@@ -17,7 +17,7 @@ class Result
 	private $rowCount;
 
 	/**
-	 * @var array
+	 * @var mixed[]
 	 */
 	private $data = [];
 
@@ -25,7 +25,7 @@ class Result
 
 	/**
 	 * @param int $rowCount
-	 * @param array $data
+	 * @param mixed[] $data
 	 */
 	public function __construct($rowCount, array $data = [])
 	{
@@ -46,7 +46,7 @@ class Result
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getData()
 	{

@@ -15,7 +15,7 @@ abstract class AbstractBase implements ParameterInterface
 
 	use SmartObject;
 
-	const FORM_ELEMENT_NAME_PREFIX = 'parameter_';
+	public const FORM_ELEMENT_NAME_PREFIX = 'parameter_';
 
 	/**
 	 * @var string

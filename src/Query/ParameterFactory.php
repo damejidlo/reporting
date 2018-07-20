@@ -15,7 +15,7 @@ class ParameterFactory implements ParameterFactoryInterface
 
 	use SmartObject;
 
-	const MAPPING = [
+	private const MAPPING = [
 		'integer' => Integer::class,
 		'string' => StringParameter::class,
 		'datetime' => DateTime::class,
