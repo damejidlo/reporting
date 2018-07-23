@@ -1,15 +1,16 @@
 language: php
 
 php:
-  - 7.0
+  - 7.1
+  - 7.2
 
 install:
   - composer self-update || echo "[ERROR] update-composer failed!"
   - composer install --no-interaction --optimize-autoloader
 
 before_script:
-  - vendor/bin/phpcs --standard=vendor/damejidlo/coding-standard/CodeSniffer/DameJidloStandard/ruleset.xml --extensions=php --encoding=utf-8  src/
-  - time ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
+  - vendor/bin/phpcs --standard=vendor/damejidlo/coding-standard/DameJidloCodingStandard/ruleset.xml --extensions=php --encoding=utf-8  src/
+  - vendor/bin/phpstan.phar analyse -l 2 -c phpstan.neon src tests
 
 script:
   - ./vendor/bin/tester -p php -s -j 32 -c ./tests/php.ini ./tests

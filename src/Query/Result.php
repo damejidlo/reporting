@@ -2,12 +2,14 @@
 
 namespace Damejidlo\Reporting\Query;
 
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class Result extends Object
+class Result
 {
+
+	use SmartObject;
 
 	/**
 	 * @var int
@@ -15,7 +17,7 @@ class Result extends Object
 	private $rowCount;
 
 	/**
-	 * @var array
+	 * @var mixed[]
 	 */
 	private $data = [];
 
@@ -23,7 +25,7 @@ class Result extends Object
 
 	/**
 	 * @param int $rowCount
-	 * @param array $data
+	 * @param mixed[] $data
 	 */
 	public function __construct($rowCount, array $data = [])
 	{
@@ -44,7 +46,7 @@ class Result extends Object
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getData()
 	{

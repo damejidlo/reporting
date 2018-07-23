@@ -10,15 +10,15 @@ interface IReportDefinitionFinder
 	 * @param int $id
 	 * @return IReportDefinition|NULL
 	 */
-	public function find(int $id);
+	public function find(int $id) : ?IReportDefinition;
 
 
 
 	/**
-	 * @param array $criteria
-	 * @param array|NULL $orderBy
+	 * @param mixed[] $criteria
+	 * @param mixed[]|NULL $orderBy
 	 * @return IReportDefinition[]
 	 */
-	public function findBy(array $criteria, array $orderBy = NULL) : array;
+	public function findBy(array $criteria, ?array $orderBy = NULL) : array;
 
 }

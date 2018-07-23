@@ -3,17 +3,19 @@
 namespace Damejidlo\Reporting\Query\Parameter;
 
 use Damejidlo\Reporting\Query\ParameterInterface;
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
 /**
  * @package Damejidlo\Reporting
  */
-abstract class AbstractBase extends Object implements ParameterInterface
+abstract class AbstractBase implements ParameterInterface
 {
 
-	const FORM_ELEMENT_NAME_PREFIX = 'parameter_';
+	use SmartObject;
+
+	public const FORM_ELEMENT_NAME_PREFIX = 'parameter_';
 
 	/**
 	 * @var string
@@ -130,7 +132,7 @@ abstract class AbstractBase extends Object implements ParameterInterface
 
 
 	/**
-	 * @param $value
+	 * @param string $value
 	 * @return bool
 	 */
 	protected function regexValidateValue($value)

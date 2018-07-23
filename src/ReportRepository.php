@@ -4,12 +4,14 @@ namespace Damejidlo\Reporting;
 
 use Damejidlo\Reporting\Query\Parser;
 use Damejidlo\Reporting\Query\SyntaxErrorException;
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class ReportRepository extends Object
+class ReportRepository
 {
+
+	use SmartObject;
 
 	/**
 	 * @var IReportDefinitionFinder
@@ -36,7 +38,7 @@ class ReportRepository extends Object
 
 
 	/**
-	 * @return array
+	 * @return mixed[]
 	 */
 	public function getList()
 	{
@@ -55,7 +57,7 @@ class ReportRepository extends Object
 
 
 	/**
-	 * @param $id
+	 * @param int $id
 	 * @return Report
 	 * @throws InvalidReportException
 	 * @throws ReportNotFoundException

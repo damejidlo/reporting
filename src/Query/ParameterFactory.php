@@ -6,14 +6,16 @@ use Damejidlo\Reporting\Query\Parameter\DateTime;
 use Damejidlo\Reporting\Query\Parameter\Integer;
 use Damejidlo\Reporting\Query\Parameter\IntegerArray;
 use Damejidlo\Reporting\Query\Parameter\StringParameter;
-use Nette\Object;
+use Nette\SmartObject;
 
 
 
-class ParameterFactory extends Object implements ParameterFactoryInterface
+class ParameterFactory implements ParameterFactoryInterface
 {
 
-	const MAPPING = [
+	use SmartObject;
+
+	private const MAPPING = [
 		'integer' => Integer::class,
 		'string' => StringParameter::class,
 		'datetime' => DateTime::class,
@@ -52,6 +54,7 @@ class ParameterFactory extends Object implements ParameterFactoryInterface
 	private function getClassName($type)
 	{
 		$mapping = self::MAPPING;
+
 		return isset($mapping[$type]) ? $mapping[$type] : NULL;
 	}
 

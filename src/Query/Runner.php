@@ -5,12 +5,15 @@ namespace Damejidlo\Reporting\Query;
 use Damejidlo\Reporting\Query\Parameter\InvalidValueException;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
-use Nette\Object;
+use Doctrine\DBAL\Statement;
+use Nette\SmartObject;
 
 
 
-class Runner extends Object
+class Runner
 {
+
+	use SmartObject;
 
 	/**
 	 * @var Connection
@@ -31,7 +34,7 @@ class Runner extends Object
 
 	/**
 	 * @param Query $query $query
-	 * @param array $parameterValues
+	 * @param mixed[] $parameterValues
 	 * @return Result
 	 * @throws InvalidParameterValueException
 	 * @throws ParameterNotSetException
@@ -54,6 +57,7 @@ class Runner extends Object
 		}
 
 		try {
+			/** @var Statement $statement */
 			$statement = $this->connection->executeQuery($query->getSql(), $query->getParameterValues(), $query->getParameterTypes());
 
 		} catch (DBALException $exception) {

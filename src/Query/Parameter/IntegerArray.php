@@ -9,18 +9,18 @@ use Doctrine\DBAL\Connection;
 class IntegerArray extends AbstractBase
 {
 
-	const PDO_TYPE = Connection::PARAM_INT_ARRAY;
+	public const PDO_TYPE = Connection::PARAM_INT_ARRAY;
 
-	const REGEX_VALIDATION_PATTERN = ' *(\d+ *)(, *\d+ *)*';
+	public const REGEX_VALIDATION_PATTERN = ' *(\d+ *)(, *\d+ *)*';
 
-	const FORM_INPUT_TYPE_DESCRIPTION = 'pole čísel oddělených čárkou';
+	public const FORM_INPUT_TYPE_DESCRIPTION = 'pole čísel oddělených čárkou';
 
-	const FORM_INPUT_INVALID_MESSAGE = 'Hodnota parametru musí být pole čísel oddělených čárkou.';
+	public const FORM_INPUT_INVALID_MESSAGE = 'Hodnota parametru musí být pole čísel oddělených čárkou.';
 
-	const FORM_INPUT_PLACEHOLDER = 'Např.: 1, 2, 3';
+	public const FORM_INPUT_PLACEHOLDER = 'Např.: 1, 2, 3';
 
 	/**
-	 * @var array
+	 * @var int[]
 	 */
 	private $value;
 
@@ -42,8 +42,8 @@ class IntegerArray extends AbstractBase
 
 
 	/**
-	 * @param $string
-	 * @return array
+	 * @param string $string
+	 * @return int[]
 	 */
 	private function parseIntegerArray($string)
 	{
@@ -57,7 +57,7 @@ class IntegerArray extends AbstractBase
 
 
 	/**
-	 * @return array
+	 * @return int[]
 	 */
 	public function getValue()
 	{
